@@ -69,8 +69,6 @@ impl Config {
             let cadena: Vec::<_> = linea
                     .split_whitespace()
                     .collect(); //Convertimos cada una de las líneas en un vector de string
-            println!("{:?}", cadena);
-
             for (pos,valor) in cadena.iter().enumerate() { //Recorremos la cadena  y obtenemos el índice donde nos encontramos
                 let inicio = pos + 1; //vamos a recorrer la cadena desde la posición +1 hasta el final
                 let mut _encontrado = false; //si antes no nos hemos encontrado con el resultado
