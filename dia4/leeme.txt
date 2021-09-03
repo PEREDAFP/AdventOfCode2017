@@ -1,0 +1,29 @@
+Realicé el cambio sobre la función is_anagram que era la que tardaba más.
+
+Hice los cambios para que se crearan dos hilos, en cada uno de ellos se contaban los caracteres que había en cada cadena y se devuelven mediante un canal.
+
+Los tiempos comparados entre los dos programas son los siguientes:
+
+dia4 sin thread:
+
+  El resultado de día 2 parte 1 es: 384
+  El resultado de día 2 parte 2 es: 266
+
+  real	0m1,946s
+  user	0m1,934s
+  sys	0m0,012s
+  
+dia4 con threads
+  El resultado de día 2 parte 1 es: 384
+  El resultado de día 2 parte 2 es: 266
+
+  real	0m1,587s
+  user	0m1,753s
+  sys	0m0,829s
+  
+  Se observa que aumenta el tiempo de sistema pero el tiempo real es casi medio segundo menos. Esto se repetía en cada uno de los casos.
+  
+  Tuve que cambiar el tipo de parámetros en las funciones implicadas en is_anagram de &str a String, ya que aparecían errores de compilación con los lifetimes, forzando a
+  que estos parámetros fueran 'static...Se investigará.
+  
+  
